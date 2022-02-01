@@ -1,9 +1,13 @@
 import React, { FC } from "react";
-
+import Banner from "./assets/images/BrandBanner.png";
 const App: FC = () => {
   return (
     <div className="App">
-      <h1>snapkoo</h1>
+      <img
+        src={Banner}
+        alt="banner"
+        style={{ width: "540px", height: "388" }}
+      />
     </div>
   );
 };
