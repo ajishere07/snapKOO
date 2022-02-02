@@ -1,0 +1,72 @@
+@import "../assets/images/stylesAssets/colors.scss";
+@import "../assets/images/stylesAssets/responsive.scss";
+.sidebarContainer {
+  position: sticky;
+  top: 0;
+  left: 0;
+  height: 500px;
+  padding: 0 30px;
+  border-right: 1px solid $secondary-hovered;
+  .logo {
+    cursor: pointer;
+    border-radius: 50%;
+
+    height: 60px;
+    margin-bottom: 60px;
+    &:hover {
+    }
+    img {
+      padding: 10px;
+      border-radius: 50%;
+      height: 100%;
+      &:hover {
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+      }
+    }
+  }
+}
+.tab {
+  padding: 8px 15px;
+  height: 60px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  cursor: pointer;
+  transition: background-color 200ms ease-in-out;
+  &:hover {
+    background-color: $secondary;
+  }
+  span {
+    margin: 0 0 0 12px;
+    font-size: 24px;
+    font-family: "Lato", sans-serif;
+  }
+}
+.btn {
+  margin: 30px 0 0 0;
+  border: 0;
+  width: 100%;
+  padding: 7px 15px;
+  background-color: $brand-color;
+  color: $text-white;
+  height: 56px;
+  cursor: pointer;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 18px;
+  &:hover {
+    background-color: $hovered-color;
+  }
+}
+.icon {
+  width: 30px;
+  &:hover {
+    color: $text-primary;
+  }
+}
+@media (max-width: $desktop-breakpoint) {
+  .sidebarContainer {
+    display: none;
+  }
+}

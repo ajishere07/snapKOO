@@ -1,0 +1,60 @@
+@import "../assets/images/stylesAssets/colors.scss";
+@import "../assets/images/stylesAssets/responsive.scss";
+.tweetsContainer {
+  padding: 10px 8px 0 0;
+}
+
+.tweetCard {
+  padding: 10px 6px;
+  display: grid;
+  grid-template-columns: 15% 85%;
+  background-color: $secondary;
+  margin: 12px 0;
+  border-radius: 20px;
+
+  img {
+    margin: 0 10px;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+  }
+}
+
+.tweetContentContainer {
+  .nameContainer {
+    position: relative;
+    margin: 0 0 5px 0;
+    z-index: 1;
+    p {
+      margin-right: 5px;
+      display: inline;
+    }
+  }
+  .dotsIcon {
+    position: absolute;
+    cursor: pointer;
+    right: 12px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    &:hover {
+      box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    }
+  }
+}
+@media (max-width: $tab-breakpoint) {
+  .tweetContentContainer {
+    .nameContainer {
+      overflow-x: scroll;
+    }
+  }
+}
+@media (max-width: $s-mobile-breakpoint) {
+  .tweetsContainer {
+    padding: 10px 0 0 0;
+  }
+  .tweetContentContainer {
+    padding-left: 15px;
+  }
+}

@@ -1,0 +1,131 @@
+.rightSiderbarContainer {
+  padding: 10px 0;
+}
+
+.newsList,
+.suggestions {
+  margin: 0 0 20px 0;
+  border-radius: 10px;
+  padding: 12px 0;
+  background-color: #f7f9f9;
+}
+
+.newsList h1,
+.suggestions h1 {
+  margin: 0 0 15px 0;
+  padding: 0 18px;
+  font-size: 18px;
+}
+
+.moreBtn {
+  margin: 7px 0 0 0;
+  padding: 0 18px;
+}
+
+.moreBtn:hover {
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.newsCard {
+  -webkit-transition: background-color 100ms ease-in-out;
+  transition: background-color 100ms ease-in-out;
+  padding: 12px 18px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.newsCard p {
+  font-weight: 600;
+  font-size: 17px;
+}
+
+.newsCard img {
+  border-radius: 20px;
+  width: 90px;
+  height: 90px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.newsCard:hover {
+  background-color: #eff3f4;
+}
+
+.suggestionCard {
+  position: relative;
+  padding: 12px 18px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: background-color 100ms ease-in-out;
+  transition: background-color 100ms ease-in-out;
+}
+
+.suggestionCard:hover {
+  background-color: #eff3f4;
+}
+
+.suggestionCard button {
+  font-weight: 700;
+  cursor: pointer;
+  height: 35px;
+  width: 92px;
+  border-radius: 20px;
+  border: 0;
+  padding: 6px 12px;
+  background-color: #000000;
+  color: #ffffff;
+  position: absolute;
+  right: 12px;
+}
+
+.suggestionCard button:hover {
+  opacity: 0.8;
+}
+
+.profileImg {
+  background-color: transparent;
+  height: 45px;
+  width: 45px;
+}
+
+.profileImg img {
+  border-radius: 50%;
+  height: 100%;
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.nameAndUserName {
+  margin-left: 12px;
+}
+
+.nameAndUserName p {
+  font-family: "Lato", sans-serif;
+  font-size: 17px;
+}
+
+.nameAndUserName span {
+  font-family: "Lato", sans-serif;
+  color: #6f7e89;
+}
+
+@media (max-width: 1000px) {
+  .rightSiderbarContainer {
+    display: none;
+  }
+}
+/*# sourceMappingURL=SuggestionsAndnews.css.map */

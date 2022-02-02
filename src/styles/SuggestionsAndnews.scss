@@ -1,0 +1,108 @@
+@import "../assets/images/stylesAssets/colors.scss";
+@import "../assets/images/stylesAssets/responsive.scss";
+$transition-hover: background-color 100ms ease-in-out;
+.rightSiderbarContainer {
+  padding: 10px 0;
+}
+.newsList,
+.suggestions {
+  margin: 0 0 20px 0;
+  border-radius: 10px;
+  padding: 12px 0;
+  h1 {
+    margin: 0 0 15px 0;
+    padding: 0 18px;
+    font-size: 18px;
+  }
+
+  background-color: $secondary;
+}
+// more btn at the bottom of the news section
+.moreBtn {
+  margin: 7px 0 0 0;
+  padding: 0 18px;
+  &:hover {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+.newsCard {
+  transition: $transition-hover;
+  padding: 12px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  p {
+    font-weight: 600;
+    font-size: 17px;
+  }
+  img {
+    border-radius: 20px;
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+  }
+  &:hover {
+    background-color: #eff3f4;
+  }
+}
+
+//suggestion sections
+.suggestionCard {
+  position: relative;
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  transition: $transition-hover;
+
+  &:hover {
+    background-color: $secondary-hovered;
+  }
+  button {
+    &:hover {
+      opacity: 0.8;
+    }
+    font-weight: 700;
+    cursor: pointer;
+    height: 35px;
+    width: 92px;
+    border-radius: 20px;
+    border: 0;
+    padding: 6px 12px;
+    background-color: $text-primary;
+    color: $text-white;
+    position: absolute;
+    right: 12px;
+  }
+}
+
+.profileImg {
+  background-color: transparent;
+  height: 45px;
+  width: 45px;
+  img {
+    border-radius: 50%;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+  }
+}
+
+.nameAndUserName {
+  margin-left: 12px;
+  p {
+    font-family: "Lato", sans-serif;
+    font-size: 17px;
+  }
+  span {
+    font-family: "Lato", sans-serif;
+    color: $text-secondary-hovered;
+  }
+}
+
+@media (max-width: $tab-breakpoint) {
+  .rightSiderbarContainer {
+    display: none;
+  }
+}

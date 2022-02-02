@@ -1,0 +1,64 @@
+.tweetsContainer {
+  padding: 10px 8px 0 0;
+}
+
+.tweetCard {
+  padding: 10px 6px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 15% 85%;
+      grid-template-columns: 15% 85%;
+  background-color: #f7f9f9;
+  margin: 12px 0;
+  border-radius: 20px;
+}
+
+.tweetCard img {
+  margin: 0 10px;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.tweetContentContainer .nameContainer {
+  position: relative;
+  margin: 0 0 5px 0;
+  z-index: 1;
+}
+
+.tweetContentContainer .nameContainer p {
+  margin-right: 5px;
+  display: inline;
+}
+
+.tweetContentContainer .dotsIcon {
+  position: absolute;
+  cursor: pointer;
+  right: 12px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+}
+
+.tweetContentContainer .dotsIcon:hover {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+          box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+@media (max-width: 1000px) {
+  .tweetContentContainer .nameContainer {
+    overflow-x: scroll;
+  }
+}
+
+@media (max-width: 450px) {
+  .tweetsContainer {
+    padding: 10px 0 0 0;
+  }
+  .tweetContentContainer {
+    padding-left: 15px;
+  }
+}
+/*# sourceMappingURL=tweets.css.map */

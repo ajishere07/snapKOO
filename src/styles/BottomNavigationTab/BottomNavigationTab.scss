@@ -1,0 +1,47 @@
+@import "../../assets/images/stylesAssets/colors.scss";
+@import "../../assets/images/stylesAssets/responsive.scss";
+.navContainer {
+  display: none;
+}
+@media (max-width: $desktop-breakpoint) {
+  .navContainer {
+    display: block;
+    position: sticky;
+    bottom: 0;
+    height: 74px;
+    border-top: 1px solid $secondary-hovered;
+    background-color: $primary;
+  }
+  .navigations {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    max-width: $tab-max-width;
+    margin: 0 auto;
+  }
+  .tabIcons {
+    width: 32px;
+  }
+}
+@media (max-width: $tab-breakpoint) {
+  .navContainer {
+    display: block;
+    position: sticky;
+    bottom: 0;
+    height: 74px;
+    border-top: 1px solid $secondary-hovered;
+    background-color: $primary;
+  }
+  .navigations {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    max-width: $mobile-max-width;
+    margin: 0 auto;
+  }
+  .tabIcons {
+    width: 32px;
+  }
+}

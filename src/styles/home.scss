@@ -1,0 +1,44 @@
+@import "../assets/images/stylesAssets/colors.scss";
+@import "../assets/images/stylesAssets/responsive.scss";
+.homeContainer {
+  max-width: $desktop-max-width;
+  margin: 0 auto;
+  background-color: $primary;
+  min-height: 100vh;
+}
+.homeGrid {
+  display: grid;
+  grid-template-columns: 30% 70%;
+
+  grid-gap: 8px;
+}
+.main {
+  display: grid;
+  // position: relative;
+  grid-template-columns: 60% 40%;
+}
+@media (max-width: $desktop-breakpoint) {
+  .homeGrid {
+    grid-template-columns: 100%;
+  }
+  .main {
+    max-width: $tab-max-width;
+    margin: 0 auto;
+  }
+}
+@media (max-width: $tab-breakpoint) {
+  .homeGrid {
+    grid-template-columns: 100%;
+  }
+  .main {
+    max-width: $mobile-max-width;
+    grid-template-columns: 100%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: $mobile-breakpoint) {
+  .main {
+    padding: 0 10px;
+  }
+}

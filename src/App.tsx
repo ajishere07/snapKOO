@@ -1,13 +1,12 @@
 import React, { FC } from "react";
-import Banner from "./assets/images/BrandBanner.png";
+import "./App.css";
+import BottomNavigations from "./components/navigations/BottomNavigations";
+import Home from "./pages/Home";
 const App: FC = () => {
   return (
     <div className="App">
-      <img
-        src={Banner}
-        alt="banner"
-        style={{ width: "540px", height: "388" }}
-      />
+      <Home />
+      <BottomNavigations />
     </div>
   );
 };

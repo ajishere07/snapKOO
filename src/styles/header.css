@@ -1,0 +1,133 @@
+.headerContainer {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: #ffffff;
+  z-index: 2;
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 70px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: #ffffff;
+}
+
+.header h1 {
+  font-size: 18px;
+}
+
+.avatar {
+  display: none;
+}
+
+.searchBoxContainer {
+  width: 360px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 20px;
+  height: 60%;
+  border-radius: 30px;
+  border: 0.5px solid transparent;
+  background-color: #eff3f4;
+}
+
+.searchBoxContainer:hover {
+  background-color: #ffffff;
+  border: 0.5px solid #f69c3b;
+}
+
+.searchBoxContainer .icon {
+  width: 20px;
+  color: #6f7e89;
+}
+
+.searchBoxContainer input {
+  margin-left: 10px;
+  font-size: 17px;
+  outline: none;
+  border: 0;
+  background-color: transparent;
+}
+
+@media (max-width: 1280px) {
+  .header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    max-width: 900px;
+    margin: 0 auto;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+    background-color: #ffffff;
+  }
+  .header h1 {
+    font-size: 18px;
+    margin: 0 0 0 10px;
+  }
+  .avatar {
+    display: inline;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  .searchBoxContainer {
+    display: none;
+  }
+}
+
+@media (max-width: 1000px) {
+  .header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    max-width: 600px;
+    margin: 0 auto;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+    background-color: #ffffff;
+  }
+  .header h1 {
+    font-size: 18px;
+    margin: 0 0 0 10px;
+  }
+  .avatar {
+    display: inline;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  .searchBoxContainer {
+    display: none;
+  }
+}
+
+@media (max-width: 620px) {
+  .header {
+    padding: 0 20px;
+  }
+}
+/*# sourceMappingURL=header.css.map */
