@@ -1,0 +1,11 @@
+.errorContainer {
+  width: 1111px;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+.errorContainer h1 {
+  color: #6f7e89;
+  font-size: 100px;
+}
+/*# sourceMappingURL=NoRouteExist.css.map */

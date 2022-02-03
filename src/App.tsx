@@ -1,19 +1,38 @@
 import React, { FC } from "react";
+import { Routes, Route, useLocation } from "react-router";
 import "./App.css";
 import KooButtonMobile from "./components/home/KooButtonMobile";
 import InputModal from "./components/modal/InputModal";
 import BottomNavigations from "./components/navigations/BottomNavigations";
+import Authentications from "./pages/Authentications";
 
 import Home from "./pages/Home";
 import { useAppSelector } from "./reduxHooks/hooks";
+import NoRouteExist from "./routes/NoRouteExist";
+import ProtectedRoutes from "./routes/ProtectedRoutes";
 const App: FC = () => {
+  const location = useLocation();
+  console.log(location);
   const modal = useAppSelector((state) => state.modal.showModal);
   return (
     <div className="App">
-      <Home />
+      <Routes>
+        <Route path="/auth" element={<Authentications />} />
+        <Route element={<ProtectedRoutes />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
+        </Route>
+
+        <Route path="*" element={<NoRouteExist />} />
+      </Routes>
+
       <InputModal showModal={modal} />
-      <BottomNavigations />
-      <KooButtonMobile />
+      {location.pathname !== "/auth" && (
+        <>
+          <BottomNavigations />
+          <KooButtonMobile />
+        </>
+      )}
     </div>
   );
 };

@@ -1,0 +1,15 @@
+@import "../assets/stylesAssets/colors.scss";
+@import "../assets/stylesAssets/responsive.scss";
+
+.errorContainer {
+  width: 1111px;
+  margin: 0 auto;
+  min-height: 100vh;
+  h1 {
+    color: $text-secondary-hovered;
+    font-size: 100px;
+    span {
+      // TODO: animation
+    }
+  }
+}

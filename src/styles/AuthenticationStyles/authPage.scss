@@ -1,0 +1,31 @@
+@import "../../assets/stylesAssets/colors.scss";
+@import "../../assets/stylesAssets/responsive.scss";
+
+.authPageContainer {
+  max-width: $desktop-max-width;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 60% 40%;
+  align-items: center;
+  img {
+    max-width: 740px;
+    max-height: 588px;
+  }
+}
+
+@media (max-width: $tab-breakpoint) {
+  .authPageContainer {
+    min-height: 100vh;
+    max-width: $desktop-max-width;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 100%;
+    align-items: center;
+    justify-items: center;
+    .banner {
+      display: none;
+      max-width: 740px;
+      max-height: 588px;
+    }
+  }
+}
