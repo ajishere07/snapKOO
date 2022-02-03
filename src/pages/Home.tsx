@@ -2,7 +2,6 @@ import Header from "../components/header/Header";
 import Main from "../components/home/Main";
 import Sidebar from "../components/navigations/Sidebar";
 import "../styles/home.css";
-type Props = {};
 
 const Home = () => {
   return (

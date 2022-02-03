@@ -1,15 +1,16 @@
 import React from "react";
 import "../../styles/sidebar.css";
-import {
-  HomeIcon,
-  HashtagIcon,
-  BellIcon,
-  UserCircleIcon,
-} from "@heroicons/react/solid";
+import { HomeIcon, BellIcon, UserCircleIcon } from "@heroicons/react/solid";
 import Logo from "../../assets/images/BrandLogo.png";
 import "../../styles/sidebar.css";
+import { useAppDispatch } from "../../reduxHooks/hooks";
+import { openModalBox } from "../../features/MODAL/modalSlice";
 type Props = {};
 const Sidebar = (props: Props) => {
+  const dispatch = useAppDispatch();
+  const openModal = (): void => {
+    dispatch(openModalBox(true));
+  };
   return (
     <aside className="sidebarContainer">
       <div className="logo">
@@ -22,10 +23,6 @@ const Sidebar = (props: Props) => {
           <span className="tabTitle">Home</span>
         </div>
         <div className="tab">
-          <HashtagIcon className="icon" />
-          <span className="tabTitle">Explore</span>
-        </div>
-        <div className="tab">
           <BellIcon className="icon" />
           <span className="tabTitle">Notifications</span>
         </div>
@@ -33,7 +30,9 @@ const Sidebar = (props: Props) => {
           <UserCircleIcon className="icon" />
           <span className="tabTitle">Profile</span>
         </div>
-        <button className="btn">Tweet</button>
+        <button className="btn" onClick={openModal}>
+          Koo
+        </button>
       </div>
       <div className="userAuthCard">{/*TODO: avatar, name, username */}</div>
     </aside>

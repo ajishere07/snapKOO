@@ -1,0 +1,72 @@
+@import "../../assets/stylesAssets/colors.scss";
+@import "../../assets/stylesAssets/responsive.scss";
+.button {
+  display: none;
+}
+
+@media (max-width: $desktop-breakpoint) {
+  .button {
+    //   box-shadow: box-shadow: $brand-color 0px 2px 8px 0px;
+    box-shadow: $brand-color 0px 0px 16px;
+    border: 0;
+    width: 120px;
+    padding: 10px 0;
+    justify-content: center;
+    height: 43px;
+    border-radius: 20px;
+    display: block;
+    position: fixed;
+    bottom: 100px;
+    right: 90px;
+    background-color: $brand-color;
+    display: flex;
+    align-items: center;
+    .kooicon {
+      width: 30px;
+      color: $text-white;
+      margin-right: 8px;
+    }
+    &:hover {
+      background-color: $hovered-color;
+    }
+    span {
+      font-size: 18px;
+      color: $text-white;
+    }
+  }
+}
+@media (max-width: $tab-breakpoint) {
+  .button {
+    //   box-shadow: box-shadow: $brand-color 0px 2px 8px 0px;
+    right: 30px;
+  }
+}
+@media (max-width: $mobile-breakpoint) {
+  .button {
+    //   box-shadow: box-shadow: $brand-color 0px 2px 8px 0px;
+    box-shadow: $brand-color 0px 0px 16px;
+    border: 0;
+    width: 55px;
+    margin: auto;
+    justify-content: center;
+    height: 55px;
+    border-radius: 20px;
+    display: block;
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    background-color: $brand-color;
+
+    .kooicon {
+      width: 30px;
+      color: $text-white;
+      margin: 0;
+    }
+    &:hover {
+      background-color: $hovered-color;
+    }
+    span {
+      display: none;
+    }
+  }
+}

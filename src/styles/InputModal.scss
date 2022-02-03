@@ -1,0 +1,57 @@
+@import "../assets/stylesAssets/colors.scss";
+@import "../assets/stylesAssets/responsive.scss";
+
+.modalContainer {
+  margin: 24px 0 0 0;
+  display: flex;
+}
+.userAvatar {
+  margin: 2px 8px;
+  width: 60px;
+  height: 60px;
+
+  img {
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  textarea {
+    font-family: "Lato", sans-serif;
+    padding: 5px 10px 10px 10px;
+
+    font-size: 18px;
+    border: 0;
+
+    border-bottom: 1px solid $text-secondary;
+    outline: none;
+  }
+
+  button {
+    margin: 10px 0 0 0;
+    width: 20%;
+    align-self: flex-end;
+    padding: 7px 8px;
+    border-radius: 20px;
+    border: 0;
+    background-color: $brand-color;
+    color: $text-white;
+    text-transform: capitalize;
+    cursor: pointer;
+    &:hover {
+      background-color: $hovered-color;
+    }
+  }
+}
+
+@media (max-width: $mobile-breakpoint) {
+  .userAvatar {
+    margin: 2px 2px;
+    width: 38px;
+    height: 38px;
+  }
+}
