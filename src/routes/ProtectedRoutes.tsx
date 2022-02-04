@@ -1,14 +1,34 @@
-import React from "react";
+import { onAuthStateChanged } from "@firebase/auth";
+import { useEffect, useState } from "react";
 import { Navigate, Outlet } from "react-router";
+import { auth } from "../configuration/firebase";
+import { authe, autheticated } from "../features/AUTH/userAuthenticatedSlice";
+import { useAppSelector, useAppDispatch } from "../reduxHooks/hooks";
 
-type Props = {};
-const useAuth = () => {
-  const user = { loggedIn: true };
-  return user && user.loggedIn;
-};
-const ProtectedRoutes = (props: Props) => {
-  const isAuth = useAuth();
+const ProtectedRoutes = () => {
+  const [loading, setLoading] = useState<boolean | null>(true);
+  const dispatch = useAppDispatch();
+  useEffect(() => {
+    let cancel = false;
+
+    onAuthStateChanged(auth, (user) => {
+      if(!cancel){
+        dispatch(autheticated(user));
+        setLoading(false);
+      } 
+      
+    });
+    return () => {
+      cancel = true;
+    }
+  },[dispatch]);
+  const isAuth = useAppSelector(authe);
+  
+  // Page will show splash page until it gets the user's credential in local storages
+
+  if (loading) return( <h1>Loading...</h1>)
   return isAuth ? <Outlet /> : <Navigate to="auth" />;
+  
 };
 
 export default ProtectedRoutes;

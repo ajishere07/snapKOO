@@ -31,7 +31,7 @@ const InputModal: FC<Props> = ({ showModal }) => {
             cols={25}
             placeholder="What's Happening?"
           />
-          {/* <hr /> */}
+         
           <button>post</button>
         </div>
       </div>

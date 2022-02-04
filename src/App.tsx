@@ -12,7 +12,7 @@ import NoRouteExist from "./routes/NoRouteExist";
 import ProtectedRoutes from "./routes/ProtectedRoutes";
 const App: FC = () => {
   const location = useLocation();
-  console.log(location);
+ 
   const modal = useAppSelector((state) => state.modal.showModal);
   return (
     <div className="App">

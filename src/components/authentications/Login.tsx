@@ -1,34 +1,35 @@
 import Input from "./Input";
 
 import Button from "./Button";
-import HorizontalLine from "./HorizontalLine";
+
 import Logo from "../../assets/images/BrandLogo.png";
 import { useAppDispatch } from "../../reduxHooks/hooks";
 import { renderRegisterPage } from "../../features/AUTH/renderPageSlice";
 import { useState } from "react";
+import { signInWithEmailAndPassword } from "@firebase/auth";
+import { auth } from "../../configuration/firebase";
+import { useNavigate } from "react-router";
 
 const Login = () => {
+  const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-  // const signinUser = async (): Promise<any> => {
-  //   if (!email || !password) {
-  //     alert("fill all the fields first");
-  //     return;
-  //   }
-  //   try {
-  //     await signInWithEmailAndPassword(auth, email, password);
-  //     alert("logged in");
-  //     navigate("/");
-  //   } catch (err) {
-  //     alert(err);
-  //     console.log(err);
-  //   }
-  // };
-  const a = () => {
-    console.log("clicked");
+  const signinUser = async (): Promise<any> => {
+    if (!email || !password) {
+      alert("fill all the fields first");
+      return;
+    }
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+      alert("logged in");
+      navigate("/home");
+    } catch (err) {
+      alert(err);
+     
+    }
   };
-
+  
   return (
     <div className="containerA">
       <div className="branding">
@@ -49,7 +50,7 @@ const Login = () => {
         data={password}
         setData={setPassword}
       />
-      <Button buttonName="Sign in" fun={a} />
+      <Button buttonName="Sign in" fun={signinUser} />
 
       {/* <HorizontalLine contentBetweenLine="Login via GOOGLE" /> */}
       {/* TODO: Google sign in option */}

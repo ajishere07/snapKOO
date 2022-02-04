@@ -1,5 +1,7 @@
 import { SearchIcon } from "@heroicons/react/solid";
 import React, { FC } from "react";
+import {auth} from '../../configuration/firebase'
+import {signOut} from 'firebase/auth'
 import "../../styles/header.css";
 interface Props {}
 const Header: FC<Props> = () => {
@@ -12,7 +14,7 @@ const Header: FC<Props> = () => {
           alt="img"
         />
 
-        <h1>Home</h1>
+        <h1 onClick={async ()=> await signOut(auth)}>Home</h1>
         <div className="searchBoxContainer">
           <SearchIcon className="icon" />
           <input

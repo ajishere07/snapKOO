@@ -7,6 +7,10 @@ import Logo from "../../assets/images/BrandLogo.png";
 import { NavigateFunction, useNavigate } from "react-router";
 import { renderSignInPage } from "../../features/AUTH/renderPageSlice";
 import { useAppDispatch } from "../../reduxHooks/hooks";
+import { auth, db } from "../../configuration/firebase";
+import { doc, setDoc, Timestamp } from "@firebase/firestore";
+import { createUserWithEmailAndPassword } from "@firebase/auth";
+import { autheticated } from "../../features/AUTH/userAuthenticatedSlice";
 const Signup: FC = () => {
   const [name, setName] = useState<string>("");
   const [username, setUsername] = useState<string>("");
@@ -14,40 +18,39 @@ const Signup: FC = () => {
   const [password, setPassword] = useState<string>("");
 
   const dispatch = useAppDispatch();
-  const [demo] = useState<string>("adfd");
 
   const navigate: NavigateFunction = useNavigate();
 
-  // const signupUser = async (): Promise<any> => {
-  //   if (!name || !email || !password) {
-  //     alert("fill all the fields first");
-  //   }
-  //   try {
-  //     const result = await createUserWithEmailAndPassword(
-  //       auth,
-  //       email,
-  //       password
-  //     );
-  //     console.log(result);
-  //     await setDoc(doc(db, "users", result.user.uid), {
-  //       uid: result.user.uid,
-  //       name,
-  //       email,
-  //       password,
-  //       createdAt: Timestamp.fromDate(new Date()),
-  //     });
+  const signupUser = async (): Promise<any> => {
+    if (!name || !email || !password || !username) {
+      alert("fill all the fields first");
+    }
+    try {
+      const result = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
 
-  //     dispatch(() => {
-  //       addEmail("");
-  //       addUsername("");
-  //       addPassword("");
-  //     });
-  //     navigate("/");
-  //   } catch (err) {
-  //     alert(err);
-  //     console.log(err);
-  //   }
-  // };
+      await setDoc(doc(db, "users", result.user.uid), {
+        uid: result.user.uid,
+        name,
+        email,
+        password,
+        username,
+        createdAt: Timestamp.fromDate(new Date()),
+      });
+      setName("");
+      setUsername("");
+      setPassword("");
+      setEmail("");
+
+      navigate("/home");
+    } catch (err) {
+      alert(err);
+      console.log(err);
+    }
+  };
   const a = () => {
     console.log("clicked");
   };
@@ -86,7 +89,7 @@ const Signup: FC = () => {
         data={password}
         setData={setPassword}
       />
-      <Button buttonName="Sign up" fun={a} />
+      <Button buttonName="Sign up" fun={signupUser} />
       {/* <HorizontalLine contentBetweenLine="Sign up using" /> */}
       {/* TODO: Google sign in option */}
 

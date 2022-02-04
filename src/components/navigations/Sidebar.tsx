@@ -5,8 +5,8 @@ import Logo from "../../assets/images/BrandLogo.png";
 import "../../styles/sidebar.css";
 import { useAppDispatch } from "../../reduxHooks/hooks";
 import { openModalBox } from "../../features/MODAL/modalSlice";
-type Props = {};
-const Sidebar = (props: Props) => {
+
+const Sidebar = () => {
   const dispatch = useAppDispatch();
   const openModal = (): void => {
     dispatch(openModalBox(true));

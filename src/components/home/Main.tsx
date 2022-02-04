@@ -2,9 +2,9 @@ import React from "react";
 import SuggestionsAndnews from "./SuggestionsAndnews";
 import Tweets from "./Tweets";
 
-type Props = {};
 
-const Main = (props: Props) => {
+
+const Main = () => {
   return (
     <div className="main">
       <Tweets />
