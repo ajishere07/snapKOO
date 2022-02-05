@@ -5,14 +5,14 @@ import KooButtonMobile from "./components/home/KooButtonMobile";
 import InputModal from "./components/modal/InputModal";
 import BottomNavigations from "./components/navigations/BottomNavigations";
 import Authentications from "./pages/Authentications";
-
+import Profile from "./pages/Profile";
 import Home from "./pages/Home";
 import { useAppSelector } from "./reduxHooks/hooks";
 import NoRouteExist from "./routes/NoRouteExist";
 import ProtectedRoutes from "./routes/ProtectedRoutes";
 const App: FC = () => {
   const location = useLocation();
- 
+
   const modal = useAppSelector((state) => state.modal.showModal);
   return (
     <div className="App">
@@ -21,6 +21,7 @@ const App: FC = () => {
         <Route element={<ProtectedRoutes />}>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
+          <Route path="/:username" element={<Profile />} />
         </Route>
 
         <Route path="*" element={<NoRouteExist />} />

@@ -1,4 +1,4 @@
-import React, { FC, useState, useEffect, useRef } from "react";
+import React, { FC } from "react";
 
 type Props = {
   typeOfInput: string;
@@ -16,7 +16,7 @@ const Input: FC<Props> = ({
   setData,
 }) => {
   return (
-    <div className="inputContainer">
+    <div className="inputContainerAuth">
       <label className="title">{titleOfInput}</label>
       <input
         value={data || ""}

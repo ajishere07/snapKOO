@@ -3,22 +3,25 @@ import "../../styles/sidebar.css";
 import { HomeIcon, BellIcon, UserCircleIcon } from "@heroicons/react/solid";
 import Logo from "../../assets/images/BrandLogo.png";
 import "../../styles/sidebar.css";
-import { useAppDispatch } from "../../reduxHooks/hooks";
+import { useAppDispatch, useAppSelector } from "../../reduxHooks/hooks";
 import { openModalBox } from "../../features/MODAL/modalSlice";
+import { useNavigate } from "react-router-dom";
 
 const Sidebar = () => {
+  const navigate = useNavigate();
   const dispatch = useAppDispatch();
+  const userData = useAppSelector((state) => state.data.userData);
   const openModal = (): void => {
     dispatch(openModalBox(true));
   };
   return (
     <aside className="sidebarContainer">
-      <div className="logo">
+      <div className="logo" onClick={() => navigate("/")}>
         <img src={Logo} alt="logo" />
       </div>
 
       <div className="navTabs">
-        <div className="tab">
+        <div className="tab" onClick={() => navigate("/home")}>
           <HomeIcon className="icon" />
           <span className="tabTitle">Home</span>
         </div>
@@ -26,7 +29,7 @@ const Sidebar = () => {
           <BellIcon className="icon" />
           <span className="tabTitle">Notifications</span>
         </div>
-        <div className="tab">
+        <div className="tab" onClick={() => navigate(`/${userData.username}`)}>
           <UserCircleIcon className="icon" />
           <span className="tabTitle">Profile</span>
         </div>
