@@ -1,0 +1,11 @@
+{
+    "version": 3,
+    "mappings": "AAGA,AAAA,gBAAgB,CAAC;EACf,UAAU,EAAE,KAAK;EACjB,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,MAAM;EACvB,WAAW,EAAE,MAAM;CAMpB;;AAVD,AAKE,gBALc,CAKd,GAAG,CAAC;EACF,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,IAAI;EACZ,UAAU,EAAE,OAAO;CACpB",
+    "sources": [
+        "Splash.scss",
+        "../stylesAssets/colors.scss",
+        "../stylesAssets/responsive.scss"
+    ],
+    "names": [],
+    "file": "Splash.css"
+}

@@ -1,6 +1,7 @@
 import { onAuthStateChanged } from "@firebase/auth";
 import { useEffect, useState } from "react";
 import { Navigate, Outlet } from "react-router";
+import Splash from "../assets/SplashScreen/Splash";
 import { auth } from "../configuration/firebase";
 import { authe, autheticated } from "../features/AUTH/userAuthenticatedSlice";
 import { fetchKoosData } from "../features/KOOS(Tweets)/KoosSlice";
@@ -31,7 +32,7 @@ const ProtectedRoutes = () => {
 
   // Page will show splash page until it gets the user's credential in local storages
 
-  if (loading) return <h1>Loading...</h1>;
+  if (loading) return <Splash />;
   return isAuth ? <Outlet /> : <Navigate to="auth" />;
 };
 
