@@ -14,6 +14,7 @@ const Login = () => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const [email, setEmail] = useState<string>("");
+  const [loading, setLoading] = useState<boolean>(false);
   const [password, setPassword] = useState<string>("");
   const signinUser = async (): Promise<any> => {
     if (!email || !password) {
@@ -21,15 +22,15 @@ const Login = () => {
       return;
     }
     try {
+      setLoading(true);
       await signInWithEmailAndPassword(auth, email, password);
       alert("logged in");
+      setLoading(false);
       navigate("/home");
     } catch (err) {
       alert(err);
-     
     }
   };
-  
   return (
     <div className="containerA">
       <div className="branding">
@@ -50,7 +51,12 @@ const Login = () => {
         data={password}
         setData={setPassword}
       />
-      <Button buttonName="Sign in" fun={signinUser} />
+      <Button
+        buttonName="Sign in"
+        whileLoading="Signing In"
+        loading={loading}
+        fun={signinUser}
+      />
 
       {/* <HorizontalLine contentBetweenLine="Login via GOOGLE" /> */}
       {/* TODO: Google sign in option */}

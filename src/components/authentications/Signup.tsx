@@ -18,7 +18,7 @@ const Signup: FC = () => {
   const [username, setUsername] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-
+  const [loading, setLoading] = useState<boolean>(false);
   const dispatch = useAppDispatch();
 
   const navigate: NavigateFunction = useNavigate();
@@ -28,6 +28,7 @@ const Signup: FC = () => {
       alert("fill all the fields first");
     }
     try {
+      setLoading(true);
       const result = await createUserWithEmailAndPassword(
         auth,
         email,
@@ -48,7 +49,7 @@ const Signup: FC = () => {
       setUsername("");
       setPassword("");
       setEmail("");
-
+      setLoading(false);
       navigate("/home");
     } catch (err) {
       alert(err);
@@ -93,7 +94,12 @@ const Signup: FC = () => {
         data={password}
         setData={setPassword}
       />
-      <Button buttonName="Sign up" fun={signupUser} />
+      <Button
+        buttonName="Sign up"
+        whileLoading="Signing Up"
+        loading={loading}
+        fun={signupUser}
+      />
       {/* <HorizontalLine contentBetweenLine="Sign up using" /> */}
       {/* TODO: Google sign in option */}
 
