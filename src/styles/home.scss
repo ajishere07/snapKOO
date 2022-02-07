@@ -6,10 +6,12 @@
   background-color: $primary;
   min-height: 100vh;
 }
+.mainContainer {
+  position: relative;
+}
 .homeGrid {
   display: grid;
   grid-template-columns: 30% 70%;
-
   grid-gap: 8px;
 }
 .main {

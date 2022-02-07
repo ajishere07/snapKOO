@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Navigate, Outlet } from "react-router";
 import { auth } from "../configuration/firebase";
 import { authe, autheticated } from "../features/AUTH/userAuthenticatedSlice";
+import { fetchKoosData } from "../features/KOOS(Tweets)/KoosSlice";
 import { fetchUserData } from "../features/PROFILE_DATA/dataSlice";
 import { useAppSelector, useAppDispatch } from "../reduxHooks/hooks";
 
@@ -17,6 +18,7 @@ const ProtectedRoutes = () => {
         dispatch(autheticated(user));
         if (user) {
           dispatch(fetchUserData(user.uid));
+          dispatch(fetchKoosData());
         }
         setLoading(false);
       }

@@ -4,6 +4,7 @@ import renderPageReducer from "../features/AUTH/renderPageSlice";
 import userAuthenticatedReducer from "../features/AUTH/userAuthenticatedSlice";
 import dataReducer from "../features/PROFILE_DATA/dataSlice";
 import editModalReducer from "../features/PROFILE_DATA/editModal";
+import KoosReducer from "../features/KOOS(Tweets)/KoosSlice";
 export const store = configureStore({
   reducer: {
     modal: modalReducer,
@@ -11,6 +12,7 @@ export const store = configureStore({
     userAuthentication: userAuthenticatedReducer,
     data: dataReducer,
     edit: editModalReducer,
+    koos: KoosReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

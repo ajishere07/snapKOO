@@ -11,6 +11,7 @@ type Props = {
 
 const InputModal: FC<Props> = ({ showModal }) => {
   const [content, setContent] = useState<string>("");
+  const [loading, setLoading] = useState<boolean>(false);
   console.log(content);
   const dispatch = useAppDispatch();
   const userData = useAppSelector((state) => state.data.userData);
@@ -38,7 +39,18 @@ const InputModal: FC<Props> = ({ showModal }) => {
             placeholder="What's Happening?"
           />
 
-          <button onClick={() => addTweet(userData, content)}>post</button>
+          <button
+            onClick={() => {
+              if (content === "") {
+                alert("post cannot be blank");
+                return;
+              }
+              setLoading(true);
+              addTweet(userData, content, setLoading);
+            }}
+          >
+            {loading ? `....` : `post`}
+          </button>
         </div>
       </div>
     </Modal>

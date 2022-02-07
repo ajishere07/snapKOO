@@ -10,7 +10,7 @@ export const signOutUser = async () => {
   await signOut(auth);
 };
 
-export const addTweet = async (userData: any, content: string) => {
+export const addTweet = async (userData: any, content: string, fun: any) => {
   const id = v4();
   const tweetsCollRef = doc(db, "/koos", id);
   await setDoc(tweetsCollRef, {
@@ -22,6 +22,7 @@ export const addTweet = async (userData: any, content: string) => {
     name: userData.name,
     profileImg: userData.profileImg,
   });
+  fun(false);
 };
 
 export const savingHeaderChange = async (

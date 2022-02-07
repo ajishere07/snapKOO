@@ -5,6 +5,10 @@
   min-height: 100vh;
 }
 
+.mainContainer {
+  position: relative;
+}
+
 .homeGrid {
   display: -ms-grid;
   display: grid;

@@ -50,7 +50,7 @@ const EditModal = () => {
   return (
     <Modal open={edit} onClose={() => dispatch(closeEditModal())}>
       <div className="profileContainer editProfileContainer">
-        <div className="headerContainer">
+        <div className="headerImgContainer">
           <img
             src={headerImgAsURL ? headerImgAsURL : headerImg}
             alt="header img"

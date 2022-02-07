@@ -10,6 +10,7 @@ import Home from "./pages/Home";
 import { useAppDispatch, useAppSelector } from "./reduxHooks/hooks";
 import NoRouteExist from "./routes/NoRouteExist";
 import ProtectedRoutes from "./routes/ProtectedRoutes";
+import Header from "./components/header/Header";
 const App: FC = () => {
   const location = useLocation();
 
@@ -26,7 +27,6 @@ const App: FC = () => {
 
         <Route path="*" element={<NoRouteExist />} />
       </Routes>
-
       <InputModal showModal={modal} />
       {location.pathname !== "/auth" && (
         <>

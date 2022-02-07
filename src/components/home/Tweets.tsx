@@ -1,12 +1,30 @@
 import React from "react";
 import "../../styles/tweets.css";
-import { DotsHorizontalIcon } from "@heroicons/react/solid";
+
+import { useAppSelector } from "../../reduxHooks/hooks";
+import { KoosList } from "../../features/KOOS(Tweets)/KoosSlice";
+import TweetCard from "./TweetCard";
 type Props = {};
 
 const Tweets = (props: Props) => {
+  const koos = useAppSelector(KoosList);
+  console.log(koos);
   return (
     <div className="tweetsContainer">
-      <div className="tweetCard">
+      {koos.map((koo: any) => (
+        <TweetCard
+          key={koo.id}
+          content={koo.content}
+          id={koo.id}
+          name={koo.name}
+          username={koo.username}
+          profileImg={koo.profileImg}
+          sharedAt={koo.sharedAt}
+          userId={koo.userId}
+        />
+      ))}
+
+      {/* <div className="tweetCard">
         <img
           src="https://images.hindustantimes.com/img/2021/01/15/1600x900/Chris-Evans_1610686588905_1610686593226.jpg"
           alt="img"
@@ -29,7 +47,7 @@ const Tweets = (props: Props) => {
           alt="img"
         />
 
-        {/* tweet content */}
+       
         <div className="tweetContentContainer">
           <div className="nameContainer">
             <p className="name">
@@ -40,7 +58,7 @@ const Tweets = (props: Props) => {
           </div>
           <div className="tweetContent">bring me thanos</div>
         </div>
-      </div>
+      </div>*/}
     </div>
   );
 };
