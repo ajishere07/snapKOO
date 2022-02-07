@@ -4,11 +4,10 @@ import "../../styles/tweets.css";
 import { useAppSelector } from "../../reduxHooks/hooks";
 import { KoosList } from "../../features/KOOS(Tweets)/KoosSlice";
 import TweetCard from "./TweetCard";
-type Props = {};
 
-const Tweets = (props: Props) => {
+const Tweets = () => {
   const koos = useAppSelector(KoosList);
-  console.log(koos);
+
   return (
     <div className="tweetsContainer">
       {koos.map((koo: any) => (

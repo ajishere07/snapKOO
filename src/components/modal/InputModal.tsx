@@ -12,7 +12,7 @@ type Props = {
 const InputModal: FC<Props> = ({ showModal }) => {
   const [content, setContent] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
-  console.log(content);
+
   const dispatch = useAppDispatch();
   const userData = useAppSelector((state) => state.data.userData);
   const closeModalFun = () => {
