@@ -2,15 +2,14 @@
 @import "../../assets/stylesAssets/responsive.scss";
 .profileContainer {
   padding: 0 20px 0 0;
-  height: 190px;
+
   width: 100%;
 }
 
 .headerImage {
-  height: 100%;
+  height: 130px;
   width: 100%;
   object-fit: contain;
-  border: 1px solid red;
 }
 .userProfileImg {
   display: flex;
@@ -57,34 +56,43 @@
     padding: 0;
   }
 
-  .profileImg {
-    img {
-      margin-top: -65px;
-      width: 130px;
-      height: 130px;
+  .headerImage {
+    height: 170px;
+    width: 100%;
+    object-fit: contain;
+  }
+
+  .profileimage {
+    margin-top: -65px;
+    width: 130px;
+    height: 130px;
+  }
+  .userBio {
+    margin: 10px 0 0 20px;
+
+    p {
+      font-size: 24px;
+      font-weight: 700;
+    }
+    small {
+      font-size: 13px;
+      color: $text-secondary-hovered;
     }
   }
 }
-.userBio {
-  margin: 10px 0 0 20px;
 
-  p {
-    font-size: 24px;
-    font-weight: 700;
-  }
-  small {
-    font-size: 13px;
-    color: $text-secondary-hovered;
-  }
-}
 @media (max-width: $mobile-breakpoint) {
   .profileContainer {
     padding: 0;
   }
-
-  .profileImg {
-    img {
-      margin-top: -50px;
+  .headerImage {
+    height: 150px;
+    width: 100%;
+    object-fit: contain;
+  }
+  .userProfileImg {
+    .profileimage {
+      margin-top: -60px;
       width: 120px;
       height: 120px;
     }
@@ -104,15 +112,15 @@
       }
     }
   }
-}
-.userBio {
-  margin: 5px 0 0 20px;
-  p {
-    font-size: 24px;
-    font-weight: 700;
-  }
-  small {
-    font-size: 13px;
-    color: $text-secondary-hovered;
+  .userBio {
+    margin: 5px 0 0 20px;
+    p {
+      font-size: 24px;
+      font-weight: 700;
+    }
+    small {
+      font-size: 13px;
+      color: $text-secondary-hovered;
+    }
   }
 }

@@ -1,0 +1,67 @@
+.iconHeader {
+  padding: 0px;
+  bottom: 10px;
+  right: 10px;
+  position: absolute;
+  width: 30px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.headerContainer {
+  position: relative;
+}
+
+.editProfileImage {
+  z-index: 1000;
+  position: relative;
+}
+
+.inputFileContainer label input {
+  display: none;
+}
+
+@media (max-width: 1000px) {
+  .iconHeader {
+    padding: 0;
+    bottom: 10px;
+    right: 10px;
+    position: absolute;
+    width: 22px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+  .headerContainer {
+    position: relative;
+  }
+  .editProfileImage {
+    z-index: 1000;
+    position: relative;
+  }
+  .inputFileContainer label input {
+    display: none;
+  }
+}
+
+@media (max-width: 620px) {
+  .iconHeader {
+    padding: 0;
+    bottom: 10px;
+    right: 10px;
+    position: absolute;
+    width: 22px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+  .headerContainer {
+    position: relative;
+  }
+  .editProfileImage {
+    z-index: 1000;
+    position: relative;
+  }
+  .inputFileContainer label input {
+    display: none;
+  }
+}
+/*# sourceMappingURL=EditUserInfo.css.map */

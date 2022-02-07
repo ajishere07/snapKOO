@@ -1,6 +1,7 @@
 import { SearchIcon } from "@heroicons/react/solid";
 import React, { FC } from "react";
 import { auth } from "../../configuration/firebase";
+import profileImg from "../../assets/images/DefaultProfileImg.png";
 import { signOut } from "firebase/auth";
 import "../../styles/header.css";
 import { useAppSelector } from "../../reduxHooks/hooks";
@@ -16,12 +17,12 @@ const Header: FC<Props> = ({ pageTitle }) => {
       <div className="header">
         <img
           className="avatar"
-          src="https://variety.com/wp-content/uploads/2021/08/The-Batman-Robert-Pattinson.jpg"
+          src={userData.profileImg ? userData.profileImg : profileImg}
           alt="img"
           onClick={() => navigate(`/${userData.username}`)}
         />
 
-        <h1 onClick={async () => await signOut(auth)}>{pageTitle}</h1>
+        <h1>{pageTitle}</h1>
         <div className="searchBoxContainer">
           <SearchIcon className="icon" />
           <input

@@ -11,6 +11,8 @@ import { auth, db } from "../../configuration/firebase";
 import { doc, setDoc, Timestamp } from "@firebase/firestore";
 import { createUserWithEmailAndPassword } from "@firebase/auth";
 import { autheticated } from "../../features/AUTH/userAuthenticatedSlice";
+import defaultImg from "../../assets/images/DefaultProfileImg.png";
+import defaultHeaderImg from "../../assets/images/headerimg.png";
 const Signup: FC = () => {
   const [name, setName] = useState<string>("");
   const [username, setUsername] = useState<string>("");
@@ -39,6 +41,8 @@ const Signup: FC = () => {
         password,
         username,
         createdAt: Timestamp.fromDate(new Date()),
+        profileImg: null,
+        headerImg: null,
       });
       setName("");
       setUsername("");

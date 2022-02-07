@@ -1,17 +1,19 @@
-import "react-responsive-modal/styles.css";
 import { Modal } from "react-responsive-modal";
-
-import { FC } from "react";
+import profileImg from "../../assets/images/DefaultProfileImg.png";
+import { FC, useState } from "react";
 import "../../styles/InputModal.css";
-import { useAppDispatch } from "../../reduxHooks/hooks";
+import { useAppDispatch, useAppSelector } from "../../reduxHooks/hooks";
 import { closeModal } from "../../features/MODAL/modalSlice";
+import { addTweet } from "../../firebaseMethods/firebaseCRUD";
 type Props = {
   showModal: boolean;
 };
 
 const InputModal: FC<Props> = ({ showModal }) => {
+  const [content, setContent] = useState<string>("");
+  console.log(content);
   const dispatch = useAppDispatch();
-
+  const userData = useAppSelector((state) => state.data.userData);
   const closeModalFun = () => {
     dispatch(closeModal(false));
   };
@@ -20,7 +22,7 @@ const InputModal: FC<Props> = ({ showModal }) => {
       <div className="modalContainer">
         <div className="userAvatar">
           <img
-            src="https://variety.com/wp-content/uploads/2021/08/The-Batman-Robert-Pattinson.jpg"
+            src={userData.profileImg ? `${userData.profileImg}` : profileImg}
             alt="img"
           />
         </div>
@@ -29,10 +31,14 @@ const InputModal: FC<Props> = ({ showModal }) => {
             typeof="text"
             rows={4}
             cols={25}
+            value={content}
+            onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
+              setContent(e.target.value)
+            }
             placeholder="What's Happening?"
           />
-         
-          <button>post</button>
+
+          <button onClick={() => addTweet(userData, content)}>post</button>
         </div>
       </div>
     </Modal>

@@ -1,26 +1,37 @@
 import React from "react";
-import { useAppSelector } from "../../reduxHooks/hooks";
+import { useAppDispatch, useAppSelector } from "../../reduxHooks/hooks";
 import headerImg from "../../assets/images/headerimg.png";
-
+import profileImg from "../../assets/images/DefaultProfileImg.png";
 import "../../styles/UserProfile/UserInfo.css";
+import { editModalShow } from "../../features/PROFILE_DATA/editModal";
+import EditModal from "./EditModal";
 const UserInfo = () => {
   const userData = useAppSelector((state) => state.data.userData);
+  const edit = useAppSelector((state) => state.edit.showEditModal);
 
+  const dispatch = useAppDispatch();
+
+  console.log(edit);
   return (
     <div className="profileContainer">
-      <img src={headerImg} alt="header img" className="headerImage" />
+      <img
+        src={userData.headerImg ? `${userData.headerImg}` : headerImg}
+        alt="header img"
+        className="headerImage"
+      />
       <div className="userProfileImg">
         <img
-          src="https://variety.com/wp-content/uploads/2021/08/The-Batman-Robert-Pattinson.jpg"
+          src={userData.profileImg ? `${userData.profileImg}` : profileImg}
           className="profileimage"
           alt="img"
         />
-        <button>Edit Profile</button>
+        <button onClick={() => dispatch(editModalShow())}>Edit Profile</button>
       </div>
       <div className="userBio">
         <p>{userData.name}</p>
         <small>@{userData.username}</small>
       </div>
+      <EditModal />
     </div>
   );
 };

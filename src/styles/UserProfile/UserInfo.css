@@ -1,15 +1,13 @@
 .profileContainer {
   padding: 0 20px 0 0;
-  height: 190px;
   width: 100%;
 }
 
 .headerImage {
-  height: 100%;
+  height: 130px;
   width: 100%;
   -o-object-fit: contain;
      object-fit: contain;
-  border: 1px solid red;
 }
 
 .userProfileImg {
@@ -69,37 +67,46 @@
   .profileContainer {
     padding: 0;
   }
-  .profileImg img {
+  .headerImage {
+    height: 170px;
+    width: 100%;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  .profileimage {
     margin-top: -65px;
     width: 130px;
     height: 130px;
   }
-}
-
-.userBio {
-  margin: 10px 0 0 20px;
-}
-
-.userBio p {
-  font-size: 24px;
-  font-weight: 700;
-}
-
-.userBio small {
-  font-size: 13px;
-  color: #6f7e89;
+  .userBio {
+    margin: 10px 0 0 20px;
+  }
+  .userBio p {
+    font-size: 24px;
+    font-weight: 700;
+  }
+  .userBio small {
+    font-size: 13px;
+    color: #6f7e89;
+  }
 }
 
 @media (max-width: 620px) {
   .profileContainer {
     padding: 0;
   }
-  .profileImg img {
-    margin-top: -50px;
+  .headerImage {
+    height: 150px;
+    width: 100%;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  .userProfileImg .profileimage {
+    margin-top: -60px;
     width: 120px;
     height: 120px;
   }
-  .profileImg button {
+  .userProfileImg button {
     margin: 7 7 0 0;
     height: 30px;
     width: 100px;
@@ -111,22 +118,19 @@
     border: 1px solid #000000;
     cursor: pointer;
   }
-  .profileImg button:hover {
+  .userProfileImg button:hover {
     background: #f7f9f9;
   }
-}
-
-.userBio {
-  margin: 5px 0 0 20px;
-}
-
-.userBio p {
-  font-size: 24px;
-  font-weight: 700;
-}
-
-.userBio small {
-  font-size: 13px;
-  color: #6f7e89;
+  .userBio {
+    margin: 5px 0 0 20px;
+  }
+  .userBio p {
+    font-size: 24px;
+    font-weight: 700;
+  }
+  .userBio small {
+    font-size: 13px;
+    color: #6f7e89;
+  }
 }
 /*# sourceMappingURL=UserInfo.css.map */

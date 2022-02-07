@@ -4,9 +4,11 @@ import { HomeIcon, BellIcon, UserCircleIcon } from "@heroicons/react/solid";
 import Logo from "../../assets/images/BrandLogo.png";
 import "../../styles/sidebar.css";
 import { useAppDispatch, useAppSelector } from "../../reduxHooks/hooks";
+import { signOut } from "firebase/auth";
 import { openModalBox } from "../../features/MODAL/modalSlice";
 import { useNavigate } from "react-router-dom";
-
+import { auth } from "../../configuration/firebase";
+import { signOutUser } from "../../firebaseMethods/firebaseCRUD";
 const Sidebar = () => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
@@ -35,6 +37,9 @@ const Sidebar = () => {
         </div>
         <button className="btn" onClick={openModal}>
           Koo
+        </button>
+        <button className="btn" onClick={signOutUser}>
+          Sign Out
         </button>
       </div>
       <div className="userAuthCard">{/*TODO: avatar, name, username */}</div>

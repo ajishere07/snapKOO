@@ -1,0 +1,73 @@
+@import "../../assets/stylesAssets/colors.scss";
+@import "../../assets/stylesAssets/responsive.scss";
+.iconHeader {
+  padding: 0px;
+  bottom: 10px;
+  right: 10px;
+  position: absolute;
+  width: 30px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.headerContainer {
+  position: relative;
+}
+.editProfileImage {
+  z-index: 1000;
+  position: relative;
+}
+.inputFileContainer {
+  label {
+    input {
+      display: none;
+    }
+  }
+}
+@media (max-width: $tab-breakpoint) {
+  .iconHeader {
+    padding: 0;
+    bottom: 10px;
+    right: 10px;
+    position: absolute;
+    width: 22px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+  .headerContainer {
+    position: relative;
+  }
+  .editProfileImage {
+    z-index: 1000;
+    position: relative;
+  }
+  .inputFileContainer {
+    label {
+      input {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: $mobile-breakpoint) {
+  .iconHeader {
+    padding: 0;
+    bottom: 10px;
+    right: 10px;
+    position: absolute;
+    width: 22px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+  .headerContainer {
+    position: relative;
+  }
+  .editProfileImage {
+    z-index: 1000;
+    position: relative;
+  }
+  .inputFileContainer {
+    label {
+      input {
+        display: none;
+      }
+    }
+  }
+}

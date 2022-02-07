@@ -5,16 +5,11 @@ import "../styles/home.css";
 import { useEffect } from "react";
 import { fetchUserData } from "../features/PROFILE_DATA/dataSlice";
 import { useAppDispatch, useAppSelector } from "../reduxHooks/hooks";
+import { authe } from "../features/AUTH/userAuthenticatedSlice";
 
 const Home = () => {
-  const userAuth = useAppSelector(
-    (state) => state.userAuthentication.credential
-  );
+  const userAuth = useAppSelector(authe);
 
-  const dispatch = useAppDispatch();
-  useEffect(() => {
-    dispatch(fetchUserData(userAuth.uid));
-  }, [dispatch]);
   return (
     <div className="homeContainer homeGrid">
       <Sidebar />

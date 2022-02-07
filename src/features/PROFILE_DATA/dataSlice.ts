@@ -12,7 +12,7 @@ import { RootState } from "../../store/store";
 
 export const fetchUserData = createAsyncThunk(
   "user/fetchUserData",
-  async (userId: string) => {
+  async (userId: string | null) => {
     //firebase database reference
 
     const usersCollectionRef = collection(db, "users");

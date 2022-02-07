@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router";
 import "./App.css";
 import KooButtonMobile from "./components/home/KooButtonMobile";
@@ -7,7 +7,7 @@ import BottomNavigations from "./components/navigations/BottomNavigations";
 import Authentications from "./pages/Authentications";
 import Profile from "./pages/Profile";
 import Home from "./pages/Home";
-import { useAppSelector } from "./reduxHooks/hooks";
+import { useAppDispatch, useAppSelector } from "./reduxHooks/hooks";
 import NoRouteExist from "./routes/NoRouteExist";
 import ProtectedRoutes from "./routes/ProtectedRoutes";
 const App: FC = () => {

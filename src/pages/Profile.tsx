@@ -3,9 +3,10 @@ import Main from "../components/userprofile/MainPage";
 import Sidebar from "../components/navigations/Sidebar";
 import "../styles/home.css";
 import { useAppSelector } from "../reduxHooks/hooks";
-
+import { data } from "../features/PROFILE_DATA/dataSlice";
 const Profile = () => {
-  const userData = useAppSelector((state) => state.data.userData);
+  const userData = useAppSelector(data);
+  console.log(userData);
   return (
     <div className="homeContainer homeGrid">
       <Sidebar />

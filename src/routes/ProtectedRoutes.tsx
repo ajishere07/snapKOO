@@ -15,6 +15,9 @@ const ProtectedRoutes = () => {
     onAuthStateChanged(auth, (user) => {
       if (!cancel) {
         dispatch(autheticated(user));
+        if (user) {
+          dispatch(fetchUserData(user.uid));
+        }
         setLoading(false);
       }
     });
