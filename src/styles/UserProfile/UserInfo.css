@@ -10,6 +10,16 @@
      object-fit: contain;
 }
 
+.koossContainer {
+  margin: 20px 0 0 0;
+  padding: 10px 0 0 0;
+  border-top: 1px solid #eff3f4;
+}
+
+.koossContainer h2 {
+  margin: 5px 0;
+}
+
 .userProfileImg {
   display: -webkit-box;
   display: -ms-flexbox;

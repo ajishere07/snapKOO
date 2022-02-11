@@ -12,33 +12,40 @@ import { RootState } from "../../store/store";
 
 export const fetchKoosData = createAsyncThunk(
   "Koos/fetchKoosData",
-  async () => {
+  async (id: string) => {
     //firebase database reference
 
     const koosCollectionRef = collection(db, "koos");
-    // const querySnapshot = await getDocs(collection(db, "users"));
-    // querySnapshot.map((doc) => {
-    //   setNames((doc.id = doc.data()));
-    // });
 
     const querySnapshot = await getDocs(koosCollectionRef);
+    const userKooQuerySnapshot = await query(
+      koosCollectionRef,
+      where("userId", "==", `${id}`)
+    );
     let data: any = [];
     querySnapshot.forEach((doc) => {
       data.push(doc.data());
     });
-    return data;
+    let userKoo: any = [];
 
-    // onSnapshot(queryObject, (snapshot) => {
-    //   return snapshot.docs.map((doc) => doc.data());
-    // });
+    const querySnapshotUserKoo = await getDocs(userKooQuerySnapshot);
+    querySnapshotUserKoo.forEach((doc) => {
+      userKoo.push(doc.data());
+    });
+    const Koos = { allkoos: data, userKoo };
+    return Koos;
+
+   
   }
 );
 interface KoosDataType {
   allKoos: any | null;
+  userKoo: any | null;
 }
 
 const initialState: KoosDataType = {
   allKoos: [],
+  userKoo: [],
 };
 
 export const KoosSlice = createSlice({
@@ -47,7 +54,9 @@ export const KoosSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(fetchKoosData.fulfilled, (state, { payload }) => {
-      state.allKoos = payload;
+      state.allKoos = payload.allkoos;
+      state.userKoo = payload.userKoo;
+      console.log(payload);
     });
   },
 });

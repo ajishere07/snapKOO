@@ -11,6 +11,14 @@
   width: 100%;
   object-fit: contain;
 }
+.koossContainer {
+  h2 {
+    margin: 5px 0;
+  }
+  margin: 20px 0 0 0;
+  padding: 10px 0 0 0;
+  border-top: 1px solid $secondary-hovered;
+}
 .userProfileImg {
   display: flex;
   justify-content: space-between;
@@ -40,6 +48,7 @@
     }
   }
 }
+
 .userBio {
   margin: 15px 0 0 0;
   p {

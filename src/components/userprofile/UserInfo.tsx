@@ -5,13 +5,14 @@ import profileImg from "../../assets/images/DefaultProfileImg.png";
 import "../../styles/UserProfile/UserInfo.css";
 import { editModalShow } from "../../features/PROFILE_DATA/editModal";
 import EditModal from "./EditModal";
+import TweetCard from "../home/TweetCard";
 const UserInfo = () => {
   const userData = useAppSelector((state) => state.data.userData);
   const edit = useAppSelector((state) => state.edit.showEditModal);
-
+  const userKoo = useAppSelector((state) => state.koos.userKoo);
   const dispatch = useAppDispatch();
 
-  console.log(edit);
+  console.log(userKoo);
   return (
     <div className="profileContainer">
       <img
@@ -30,6 +31,21 @@ const UserInfo = () => {
       <div className="userBio">
         <p>{userData.name}</p>
         <small>@{userData.username}</small>
+      </div>
+      <div className="koossContainer">
+        <h2>Your Koo's</h2>
+        {userKoo.map((koo: any) => (
+          <TweetCard
+            key={koo.id}
+            content={koo.content}
+            id={koo.id}
+            name={koo.name}
+            username={koo.username}
+            profileImg={koo.profileImg}
+            sharedAt={koo.sharedAt}
+            userId={koo.userId}
+          />
+        ))}
       </div>
       <EditModal />
     </div>

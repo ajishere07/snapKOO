@@ -19,7 +19,7 @@ const ProtectedRoutes = () => {
         dispatch(autheticated(user));
         if (user) {
           dispatch(fetchUserData(user.uid));
-          dispatch(fetchKoosData());
+          dispatch(fetchKoosData(user.uid));
         }
         setLoading(false);
       }
