@@ -46,7 +46,7 @@ const InputModal: FC<Props> = ({ showModal }) => {
                 return;
               }
               setLoading(true);
-              addTweet(userData, content, setLoading);
+              addTweet(userData.uid, content, setLoading);
             }}
           >
             {loading ? `....` : `post`}

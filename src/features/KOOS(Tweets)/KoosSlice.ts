@@ -34,8 +34,6 @@ export const fetchKoosData = createAsyncThunk(
     });
     const Koos = { allkoos: data, userKoo };
     return Koos;
-
-   
   }
 );
 interface KoosDataType {
@@ -56,7 +54,6 @@ export const KoosSlice = createSlice({
     builder.addCase(fetchKoosData.fulfilled, (state, { payload }) => {
       state.allKoos = payload.allkoos;
       state.userKoo = payload.userKoo;
-      console.log(payload);
     });
   },
 });

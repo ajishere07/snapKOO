@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../../styles/tweets.css";
 
 import { useAppSelector } from "../../reduxHooks/hooks";
@@ -13,13 +13,9 @@ const Tweets = () => {
       {koos.map((koo: any) => (
         <TweetCard
           key={koo.id}
-          content={koo.content}
-          id={koo.id}
-          name={koo.name}
-          username={koo.username}
-          profileImg={koo.profileImg}
-          sharedAt={koo.sharedAt}
           userId={koo.userId}
+          content={koo.content}
+          sharedAt={koo.sharedAt}
         />
       ))}
 

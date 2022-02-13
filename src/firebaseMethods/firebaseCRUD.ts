@@ -10,17 +10,14 @@ export const signOutUser = async () => {
   await signOut(auth);
 };
 
-export const addTweet = async (userData: any, content: string, fun: any) => {
+export const addTweet = async (userId: string, content: string, fun: any) => {
   const id = v4();
   const tweetsCollRef = doc(db, "/koos", id);
   await setDoc(tweetsCollRef, {
     id,
     content,
-    userId: userData.uid,
+    userId,
     sharedAt: Timestamp.fromDate(new Date()),
-    username: userData.username,
-    name: userData.name,
-    profileImg: userData.profileImg,
   });
   fun(false);
 };
