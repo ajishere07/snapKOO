@@ -38,10 +38,6 @@ const UserInfo = () => {
           <TweetCard
             key={koo.id}
             content={koo.content}
-            id={koo.id}
-            name={koo.name}
-            username={koo.username}
-            profileImg={koo.profileImg}
             sharedAt={koo.sharedAt}
             userId={koo.userId}
           />
